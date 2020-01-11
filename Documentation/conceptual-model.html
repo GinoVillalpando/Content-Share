@@ -42,6 +42,8 @@
     </script>
 </head>
 
+<!-- conceptual model with profile, post, image, audio, novel, video and tags tables -->
+
     <body style="background-color: #333;">
         
         <div class="container">
@@ -50,12 +52,12 @@
                 <div class="card m-3">
                     <h2 class="card-title">Profile</h2>
                     <ul class="card-body">
-                        <li class="list-unstyled">profileId(primary key)</li>
+                        <li class="list-unstyled">profileId (primary key)</li>
                         <li class="list-unstyled">profileActivationToken</li>
-                        <li class="list-unstyled">profileAvatarUrl</li>
+                        <li class="list-unstyled">profileBio</li>
+                        <li class="list-unstyled">profilePicture</li>
                         <li class="list-unstyled">profileEmail</li>
                         <li class="list-unstyled">profileHash</li>
-                        <li class="list-unstyled">profileName</li>
                         <li class="list-unstyled">profilePhone</li>
                         <li class="list-unstyled">profileUsername</li>
                     </ul>
@@ -64,11 +66,12 @@
                 <div class="card m-3">
                     <h2 class="card-title">Post</h2>
                     <ul class="card-body">
-                        <li class="list-unstyled">postId(primary key)</li>
-                        <li class="list-unstyled">postProfileId(foreign key)</li>
+                        <li class="list-unstyled">postId (primary key)</li>
+                        <li class="list-unstyled">postProfileId (foreign key)</li>
                         <li class="list-unstyled">postAudio</li>
                         <li class="list-unstyled">postContent</li>
                         <li class="list-unstyled">postImage</li>
+                        <li class="list-unstyled">postNovel</li>
                         <li class="list-unstyled">postTags</li>
                         <li class="list-unstyled">postVideo</li>
                     </ul>
@@ -77,20 +80,62 @@
                 <div class="card m-3">
                     <h2 class="card-title">Image</h2>
                     <ul class="card-body">
-                        <li class="list-unstyled">imageId</li>
-                        <li class="list-unstyled">imageProfileAvatarUrl</li>
-                        <li class="list-unstyled">imageUrl</li>
-                        <li class="list-unstyled">card body</li>
+                        <li class="list-unstyled">imageId (primary key) </li>
+                        <li class="list-unstyled">imagePostId (foreign key) </li>
+                        <li class="list-unstyled">imageProfileId (foreign key) </li>
+                        <li class="list-unstyled">imageAudioCoverArt</li>
+                        <li class="list-unstyled">imageNovelPicture</li>
+                        <li class="list-unstyled">imageProfilePicture</li>
+                        <li class="list-unstyled">imagePostPicture</li>
+                        <li class="list-unstyled">imageVideoThumbnail</li>
                     </ul>
                 </div>
 
                 <div class="card m-3">
-                    <h2 class="card-title">Hello</h2>
+                    <h2 class="card-title">Audio</h2>
                         <ul class="card-body">
-                            <li class="list-unstyled">card body</li>
+                            <li class="list-unstyled">audioId (primary key)</li>
+                            <li class="list-unstyled">audioPostId (foreign key)</li>
+                            <li class="list-unstyled">audioProfileId (foreign key)</li>
+                            <li class="list-unstyled">audioCoverArt</li>
+                            <li class="list-unstyled">audioUrl</li>
                         </ul>
                 </div>
 
+                <div class="card m-3">
+                    <h2 class="card-title">Novel</h2>
+                        <ul class="card-body">
+                            <li class="list-unstyled">novelId (primary key)</li>
+                            <li class="list-unstyled">novelImageId (foreign key)</li>
+                            <li class="list-unstyled">novelPostId (foreign key)</li>
+                            <li class="list-unstyled">novelProfileId (foreign key)</li>
+                            <li class="list-unstyled">novelCoverArt</li>
+                            <li class="list-unstyled">novelText</li>
+                        </ul>
+                </div>
+
+                <div class="card m-3">
+                    <h2 class="card-title">Tags</h2>
+                        <ul class="card-body">
+                            <li class="list-unstyled">tagsId (primary key)</li>
+                            <li class="list-unstyled">tagsPostId (foreign key)</li>
+                            <li class="list-unstyled">tagsName</li>
+                        </ul>
+                </div>
+
+                <div class="card m-3">
+                    <h2 class="card-title">Video</h2>
+                        <ul class="card-body">
+                            <li class="list-unstyled">videoId (primary key)</li>
+                            <li class="list-unstyled">videoImageId (foreign key)</li>
+                            <li class="list-unstyled">videoPostId (foreign key)</li>
+                            <li class="list-unstyled">videoProfileId (foreign key)</li>
+                            <li class="list-unstyled">videoDescription</li>
+                            <li class="list-unstyled">videoThumbnail</li>
+                            <li class="list-unstyled">videoTitle</li>
+                            <li class="list-unstyled">videoUrl</li>
+                        </ul>
+                </div>
 
             </div>
         </div>
